@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Appointment Scheduler</title>
+    <script src="libraries/p5.js" type="text/javascript"></script>
+    <script src="libraries/p5.dom.js" type="text/javascript"></script>
+    <script src="sketch.js" type="text/javascript"></script>
+
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <!-- magnific popup CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- nice select CSS -->
+    <link rel="stylesheet" href="css/nice-select.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header>
+      <div class="bodyheader">
+        <h1 style="color:#55c6c9 " align=center>Appointment Scheduler </h1>
+          <h5 style="color:#55c6c9"><i> where you meet your doctors</i></h5>
+        <h4 style="color:#55c6c9" align=right> 3431 High Cmns, </br>
+          Fremont,Ca 94538</h4>
+      </div>
+    </header>
+    <header class="main_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                            id="navbarSupportedContent">
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about.html">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="doctors.html">Doctors</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contactus.html">Contact</a>
+                                </li>
+                                <li class="d-none d-lg-block">
+                                    <a class="btn_1" href="learn.html">learn more</a>
+                                </li>
+                                </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- banner part start-->
+    <section class="banner_part">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-xl-6">
+                    <div class="banner_text">
+                        <div class="banner_text_iner">
+                            <h1>The future
+                                of healthcare is right here</h1>
+                            <p>Appointment scheduler system is to computerize the front office management of patients and doctors which is user friendly , cost effective and simple to use. Appointment scheduler system deals with managing patients and doctors appointments.
+                               This application will be useful for patients to find the available timings of the concerned doctors and schedule an appointment with the concerned doctor.</p>
+                            <div class="banner_item">
+                              <div class="single_item">
+                                  <img src="img/icon/doctor_assistant.png" alt="">
+                                  <h5>Certified Doctores</h5>
+                              </div>
+                                <div class="single_item">
+                                    <img src="img/icon/ambulance.png" alt="">
+                                    <h5>Emergency Cases</h5>
+                                </div>
+                                <div class="single_item">
+                                    <img src="img/icon/appointment_missed.png" alt="">
+                                    <h5>Easy Appointment</h5>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="review_part">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="client_review_part owl-carousel">
+                        <div class="client_review_single">
+                            <img src="img/Quote.png" class="Quote" alt="quote">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="regervation_part">
+        <div class="container">
+            <div class="row align-items-center regervation_content">
+                <div class="col-lg-7 col-md-6">
+                    <div class="regervation_part_iner">
+                        <form>
+                            <h2>Make an Appointment</h2>
+                            <div class="form-row">
+                            <div class="form-group col-md-6">
+
+                              <input value="Patient Name" id="uname" class="form-control"></input>
+
+                            </div>
+                            <div class="form-group col-md-6">
+                              <input value="Patient age" id="age" class="form-control"></input>
+                            </div>
+                            <div class="form-group col-md-6">
+
+                              <input value="Reason For Visit" id="reason" class="form-control"></input>
+
+                            </div>
+                            <div class="form-group col-md-6">
+                              <input value="Contact#" id="phone" class="form-control"></input>
+                            </div>
+
+
+
+                            <div class="form-group col-md-6">
+                              <select class="form-control" id="dname">
+                                  <option value="Doctors">Doctors</option>
+                              </select>
+                            </div>
+                            <div class="form-group time_icon col-md-6">
+                              <select class="form-control" id="time">
+                                  <option value="Time">Time</option>
+                              </select>
+
+
+
+                          </div>
+
+
+
+                          </div>
+                          <div class="regerv_btn">
+                            <p>
+                              <button id="submitit" class="regerv_btn_iner">Make an Appointment</button>
+                            </p>
+                          </div>
+
+                        </form>
+                    </div>
+                  </div>
+                  <script>
+
+                  var select = document.getElementById("dname"),
+                           arr = ["Mary","Alam","Munna Bhai","John","Mickey","Bob","Robert"];
+
+                   for(var i = 0; i < arr.length; i++)
+                   {
+                       var option = document.createElement("OPTION"),
+                           txt = document.createTextNode(arr[i]);
+                       option.appendChild(txt);
+                       option.setAttribute("value",arr[i]);
+                       select.insertBefore(option,select.lastChild);
+                   }
+                   var select1 = document.getElementById("time"),
+                            arr1 = ["10:00","11:00","12:00","13:00","14:00"];
+
+                    for(var i = 0; i < arr1.length; i++)
+                    {
+                        var option = document.createElement("OPTION"),
+                            txt = document.createTextNode(arr1[i]);
+                        option.appendChild(txt);
+                        option.setAttribute("value",arr1[i]);
+                        select1.insertBefore(option,select1.lastChild);
+                    }
+
+
+
+
+                  </script>
+                <div class="col-lg-5 col-md-6">
+                    <div class="reservation_img">
+                        <img src="img/reservation.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+    </section>
+    <!-- banner part start-->
+
+    <!-- feature_part start-->
+    <section class="feature_part padding_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 align-self-center">
+                    <div class="single_feature_text ">
+                        <h2>We offer Special
+                            Services</h2>
+                        <p>Our special services are</p>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8">
+                    <div class="feature_item">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="single_feature">
+                                    <div class="single_feature_part">
+                                        <span class="single_feature_icon"><img src="img/icon/gynec.jpg"
+                                                alt=""></span>
+                                        <h4>Gynaecology</h4>
+                                        <p>The department of gynaecology surgery deals with every form of gynaecological disorders that a woman might face at any point of her life like cases of endometriosis, pelvic inflammatory disease, ovarian cysts and uterine fibroids or polyps.All of these can be treated with laparoscopic surgeries.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="single_feature">
+                                    <div class="single_feature_part">
+                                        <span class="single_feature_icon"><img src="img/icon/cardio.jpg"
+                                                alt=""></span>
+                                        <h4>Cardiology</h4>
+                                        <p>The Department of Cardiology deals with heart and circulatory system diseases. With the latest technology, skilled physicians and compassionate staff provide care for abnormalities of cardiac rhythm and conduction, coronary artery disease, cardiomyopathies, heart failure and valvular heart disease.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="single_feature">
+                                    <div class="single_feature_part">
+                                        <span class="single_feature_icon"><img src="img/icon/feature_2.svg"
+                                                alt=""></span>
+                                        <h4>Vision </h4>
+                                        <p>Cataract ServicesCataract is the clouding of the natural crystalline lens and typically occurs because of ageing, although other reasons may be prolonged use of steroids, exposure to ultra violet and associated health problems like diabetes and eye injuries.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="single_feature">
+                                    <div class="single_feature_part">
+                                        <span class="single_feature_icon"><img src="img/icon/feature_1.svg"
+                                                alt=""></span>
+                                        <h4>Dental</h4>
+                                        <p>While there are several people who make you smile, we go a step further. We help you look after your smile to make sure that it stays healthy and bright, always”. We don’t focus solely on damage control. Helping you maintain a healthy smile is what makes our day. That’s why we have a range of services tailored to assist you with preventive care. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="intro_video_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro_video_iner text-center">
+                        <h2>View Our History</h2>
+                        <div class="intro_video_icon">
+                            <a id="play-video_1" class="video-play-button popup-youtube"
+                                href="https://www.youtube.com/watch?v=pBFQdxA-apI">
+                                <span class="ti-control-play"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- intro_video_bg part start-->
+
+    <!--::blog_part start::-->
+
+
+
+
+    <!-- jquery plugins here-->
+
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <!-- swiper js -->
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <!-- contact js -->
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="js/contact.js"></script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+    <!-- Start of LiveChat (www.livechatinc.com) code -->
+<script type="text/javascript">
+  window._lc = window._lc || {};
+  window.__lc.license = 11466483;
+  (function() {
+    var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+    lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+  })();
+</script>
+<noscript>
+<a href="https://www.livechatinc.com/chat-with/11466483/" rel="nofollow">Chat with us</a>,
+powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
+</noscript>
+<!-- End of LiveChat code -->
+</body>
+
+</html>
