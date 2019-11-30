@@ -27,6 +27,7 @@ function setup() {
         }
       }
     }
+   alert("Hello" + "\t" + unameinput.value() + "\t" + "Your appointment has been booked at \t"  + time.value());
 
 
     // Use loadJSON
@@ -35,8 +36,7 @@ function setup() {
     function submitted(result) {
 
       console.log(result);
-      alert("Hello" + "\t" + unameinput.value() + "\t" + "Your appointment has been booked at \t"  + time.value());
-
+     
 
     }
   }
