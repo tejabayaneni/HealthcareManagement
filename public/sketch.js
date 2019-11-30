@@ -1,4 +1,3 @@
-
 function setup() {
   noCanvas();
 
@@ -10,24 +9,35 @@ function setup() {
   // var timeinput=select('#time');
   var submit = select('#submitit');
   submit.mousePressed(submituser);
-  var doc=select('#dname');
-  var time=select('#time');
-  console.log(doc.value())
+  var doc = select('#dname');
+  var time = select('#time');
   // Submit the user to the API
   function submituser() {
+    var url = '/add/' + unameinput.value() + '/' + ageinput.value() + '/' + doc.value() + '/' + time.value();
+    console.log(doc.value())
+    if(doc.value()=="Doctors*"||time.value()=="Time*"){
+      alert("Please fill out the required fields");
+    }
+    for (var i = 0; i < doctime.length; i++) {
+      doctor = doctime[i]
+      if (doctor[1] == doc.value()) {
+        var ind = doctor[2].indexOf(time.value());
+        if (ind > -1) {
+          doctor[2].splice(ind,1);
+        }
+      }
+    }
 
 
-    // Make the url
-
-      var url = '/add/' + unameinput.value() + '/' + ageinput.value() + '/'+doc.value()+'/'+time.value();
-    alert("Hello"+"\t"+unameinput.value()+"\t"+"Your appointment has been booked with" +" "+ doc.value()+ "\t"+"at \t" + time.value());
     // Use loadJSON
     loadJSON(url, submitted);
+
     function submitted(result) {
 
       console.log(result);
+      alert("Hello" + "\t" + unameinput.value() + "\t" + "Your appointment has been booked at \t"  + time.value());
 
-      console.log(doc.value(),"doctor name")
+
     }
   }
 

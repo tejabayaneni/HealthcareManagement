@@ -1,29 +1,13 @@
-// A2Z F16
-// Daniel Shiffman
-// http://shiffman.net/a2z
-// https://github.com/shiffman/A2Z-F16
-
-// http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010
-// https://www.npmjs.com/package/sentiment
-
-// Using express: http://expressjs.com/
+// Krishna Teja Bayaneni
 var express = require('express');
 // Create the app
 var app = express();
-
-// File System for loading the list of words
 var fs = require('fs');
-
-// Cors for allowing "cross origin resources"
-// https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
 var cors = require('cors');
 app.use(cors());
 
 // This is for hosting files
 app.use(express.static('public'));
-
-// Our "database" (in addition to what is in the AFINN-111 list)
-// is "additional.json", check first to see if it exists
 var users;
 var users1;
 var exists = fs.existsSync('users.json');
@@ -82,8 +66,6 @@ function addUser(req, res) {
   }
   console.log('adding: ' + JSON.stringify(reply));
 
-  // Write a file each time we get a new word
-  // This is kind of silly but it works
   //console.log(users1);
   var json = JSON.stringify(users1);
   fs.writeFile('users.json', json, 'utf8', finished);

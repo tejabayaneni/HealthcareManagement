@@ -13,16 +13,6 @@
     <link rel="icon" href="img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- animate CSS -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <!-- themify CSS -->
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <!-- flaticon CSS -->
-    <link rel="stylesheet" href="css/flaticon.css">
-    <!-- magnific popup CSS -->
-    <link rel="stylesheet" href="css/magnific-popup.css">
     <!-- nice select CSS -->
     <link rel="stylesheet" href="css/nice-select.css">
     <!-- swiper CSS -->
@@ -118,7 +108,7 @@
                 <div class="col-lg-10">
                     <div class="client_review_part owl-carousel">
                         <div class="client_review_single">
-                            <img src="img/Quote.png" class="Quote" alt="quote">
+
 
                     </div>
                 </div>
@@ -135,39 +125,45 @@
                             <div class="form-row">
                             <div class="form-group col-md-6">
 
-                              <input value="Patient Name" id="uname" class="form-control"></input>
+                              <input type="text"placeholder="Patient Name*" id="uname" class="form-control" required></input>
 
                             </div>
                             <div class="form-group col-md-6">
-                              <input value="Patient age" id="age" class="form-control"></input>
+                              <input placeholder="Patient age*" id="age" class="form-control" required></input>
                             </div>
                             <div class="form-group col-md-6">
 
-                              <input value="Reason For Visit" id="reason" class="form-control"></input>
+                              <input placeholder="Reason For Visit" id="reason" class="form-control"></input>
 
                             </div>
                             <div class="form-group col-md-6">
-                              <input value="Contact#" id="phone" class="form-control"></input>
+                              <input type="tel"placeholder="Contact#" id="phone" class="form-control"></input>
                             </div>
-
-
-
                             <div class="form-group col-md-6">
-                              <select class="form-control" id="dname">
-                                  <option value="Doctors">Doctors</option>
+
+                              <input placeholder="Blood Group" id="bg" class="form-control"></input>
+
+                            </div>
+                            <div class="form-group col-md-6">
+                              <input type="email" placeholder="E-mail" id="email" class="form-control"></input>
+                            </div>
+                            <div class="form-group col-md-6">
+                              <select class="form-control" id="dname" onchange=update() required>
+                                <!-- <option selected="selected">Doctors*</option> -->
+                                <option value="1">Alam</option>
+                                <option value="2">Mary</option>
+                                <option value="3">Munna Bhai</option>
+                                <option value="4">John</option>
+                                <option value="5">Mickey</option>
+                                <option value="6">Bob</option>
+                                <option value="7">Robert</option>
                               </select>
                             </div>
-                            <div class="form-group time_icon col-md-6">
-                              <select class="form-control" id="time">
-                                  <option value="Time">Time</option>
+                            <div class="form-group col-md-6">
+                              <select class="form-control" id="time" required>
+                                 <!-- <option selected="selected">Time *</option> -->
                               </select>
-
-
-
-                          </div>
-
-
-
+                            </div>
                           </div>
                           <div class="regerv_btn">
                             <p>
@@ -180,31 +176,45 @@
                   </div>
                   <script>
 
-                  var select = document.getElementById("dname"),
-                           arr = ["Mary","Alam","Munna Bhai","John","Mickey","Bob","Robert"];
+                  var doctime = [
+                    ["Alam", "1", ["9:00", "11:00", "12:00", "1:00"]],
+                    ["Mary", "2", ["10:00", "11:00", "12:00", "1:00"]],
+                    ["Munna Bhai", "3", ["10:00", "11:00", "12:00", "1:00"]],
+                    ["John", "4", ["10:00", "11:00", "12:00", "1:00"]],
+                    ["Mickey", "5", ["8:00", "11:00", "12:00", "1:00"]],
+                    ["Bob", "6", ["10:00", "11:00", "12:00", "1:00"]],
+                    ["Robert", "7", ["10:00", "11:00", "12:00", "1:00"]]
 
-                   for(var i = 0; i < arr.length; i++)
-                   {
-                       var option = document.createElement("OPTION"),
-                           txt = document.createTextNode(arr[i]);
-                       option.appendChild(txt);
-                       option.setAttribute("value",arr[i]);
-                       select.insertBefore(option,select.lastChild);
-                   }
-                   var select1 = document.getElementById("time"),
-                            arr1 = ["10:00","11:00","12:00","13:00","14:00"];
+                  ];
+                    function update() {
+                      var doctors = document.getElementById("dname");
+                      var times = document.getElementById("time");
+                      var selected = doctors.options[doctors.selectedIndex].value;
+                      if (selected != "0") {
+                        Clear(times);
+                        var doctor;
+                        var timeArray;
+                        for (var i = 0; i < doctime.length; i++) {
 
-                    for(var i = 0; i < arr1.length; i++)
-                    {
-                        var option = document.createElement("OPTION"),
-                            txt = document.createTextNode(arr1[i]);
-                        option.appendChild(txt);
-                        option.setAttribute("value",arr1[i]);
-                        select1.insertBefore(option,select1.lastChild);
+                          doctor = doctime[i];
+                          if (doctor[1] == selected) {
+                            timeArray = doctor[2];
+                            for (var p = 0; p < timeArray.length; p++) {
+                              var opt1 = document.createElement('option');
+                              opt1.innerHTML = timeArray[p];
+                              opt1.value = timeArray[p];
+                              times.appendChild(opt1);
+                            }
+                          }
+                        }
+                      } else {
+                        Clear(times);
+                      }
                     }
 
-
-
+                    function Clear(ctrl) {
+                      ctrl.options.length = 1;
+                    }
 
                   </script>
                 <div class="col-lg-5 col-md-6">
@@ -278,66 +288,10 @@
         </div>
     </section>
 
-
-
-
-
-    <section class="intro_video_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro_video_iner text-center">
-                        <h2>View Our History</h2>
-                        <div class="intro_video_icon">
-                            <a id="play-video_1" class="video-play-button popup-youtube"
-                                href="https://www.youtube.com/watch?v=pBFQdxA-apI">
-                                <span class="ti-control-play"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- intro_video_bg part start-->
-
-    <!--::blog_part start::-->
-
-
-
-
-    <!-- jquery plugins here-->
-
-    <script src="js/jquery-1.12.1.min.js"></script>
-    <!-- popper js -->
-    <script src="js/popper.min.js"></script>
-    <!-- bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- easing js -->
-    <script src="js/jquery.magnific-popup.js"></script>
-    <!-- swiper js -->
-    <script src="js/swiper.min.js"></script>
-    <!-- swiper js -->
-    <script src="js/masonry.pkgd.js"></script>
-    <!-- particles js -->
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <!-- swiper js -->
-    <script src="js/slick.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <!-- contact js -->
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/mail-script.js"></script>
-    <script src="js/contact.js"></script>
-    <!-- custom js -->
-    <script src="js/custom.js"></script>
-    <!-- Start of LiveChat (www.livechatinc.com) code -->
+<!-- Start of LiveChat (www.livechatinc.com) code -->
 <script type="text/javascript">
-  window._lc = window._lc || {};
-  window.__lc.license = 11466483;
+  window.__lc = window.__lc || {};
+  window.__lc.license = 11467248;
   (function() {
     var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
     lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
@@ -345,10 +299,12 @@
   })();
 </script>
 <noscript>
-<a href="https://www.livechatinc.com/chat-with/11466483/" rel="nofollow">Chat with us</a>,
+<a href="https://www.livechatinc.com/chat-with/11467248/" rel="nofollow">Chat with us</a>,
 powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
 </noscript>
 <!-- End of LiveChat code -->
+
+
 </body>
 
 </html>
