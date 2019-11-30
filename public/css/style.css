@@ -47,11 +47,17 @@ input:hover, input:focus {
   .section_padding {
     padding: 70px 0px;
   }
+    img#optional{
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .section_padding {
     padding: 70px 0px;
+  }
+    img#optional{
+    display: none;
   }
 }
 
@@ -83,6 +89,9 @@ input:hover, input:focus {
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .single_padding_top {
     padding-top: 80px !important;
+  }
+    img#optional{
+    display: none;
   }
 }
 
